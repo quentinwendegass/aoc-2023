@@ -33,7 +33,7 @@ func partTwo(data []byte) int {
 		rollNorth(lines)
 		rollWest(lines)
 		rollSouth(lines)
-		rollEastBetter(lines)
+		rollEast(lines)
 
 		h := md5.New()
 		h.Write(data)
@@ -137,7 +137,7 @@ func rollWest(lines [][]byte) {
 	}
 }
 
-func rollEastBetter(lines [][]byte) {
+func rollEast(lines [][]byte) {
 	for _, line := range lines {
 		for i := len(line) - 2; i >= 0; i-- {
 			if line[i] == 'O' {
